@@ -12,14 +12,14 @@ let scoreValue: number = 0
 
 // on shake
 input.onGesture(Gesture.Shake, function() {
-  rockPaperScissors = randint(0 , 2)
+  rockPaperScissors = randint(0, 2)
 
-if (rockPaperScissors == 0) {
-basic.showIcon(IconNames.Scissors)
-}
+  if (rockPaperScissors == 0) {
+     basic.showIcon(IconNames.Scissors)
+  }
 
-if (rockPaperScissors == 1) { 
-  basic.showLeds(`
+  if (rockPaperScissors == 1) {
+    basic.showLeds(`
   # # # # #
   # . . . #
   # . . . #
@@ -28,8 +28,8 @@ if (rockPaperScissors == 1) {
   `)
 }
 
-if (rockPaperScissors == 2) {
-  basic.showLeds(`
+  if (rockPaperScissors == 2) {
+    basic.showLeds(`
   . . . . .
   . # # # .
   . # # # .
@@ -38,15 +38,21 @@ if (rockPaperScissors == 2) {
   `)
 }
 
-basic.pause(1000)
-basic.clearScreen()
+  basic.pause(1000)
+  basic.clearScreen()
+  basic.showIcon(IconNames.Happy)
 })
 // when A button is pressed
 input.onButtonPressed(Button.A, function() {
   basic.showIcon(IconNames.Yes)
   scoreValue = scoreValue + 1
+  basic.pause(1000)
+  basic.clearScreen()
+  basic.showIcon(IconNames.Happy)
 })
 //when B button is pressed
 input.onButtonPressed(Button.B, function () {
+  basic.clearScreen()
   basic.showString('Score is:' + (scoreValue).toString())
+  basic.showIcon(IconNames.Happy)
 })
