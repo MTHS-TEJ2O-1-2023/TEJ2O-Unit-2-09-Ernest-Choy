@@ -11,7 +11,7 @@ let rockPaperScissors: number = -1
 let scoreValue: number = 0
 
 // on shake
-input.onGesture(Gesture.Shake, function() {
+input.onGesture(Gesture.Shake, function () {
   rockPaperScissors = randint(0, 2)
 
   if (rockPaperScissors === 0) {
@@ -41,7 +41,7 @@ input.onGesture(Gesture.Shake, function() {
   basic.pause(1000)
   basic.clearScreen()
   basic.showIcon(IconNames.Happy)
-  })
+})
 // when A button is pressed
 input.onButtonPressed(Button.A, function () {
   basic.showIcon(IconNames.Yes)
